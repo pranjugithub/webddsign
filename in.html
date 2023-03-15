@@ -1,0 +1,125 @@
+<html>
+
+<head>
+    <script type="text/javascript">
+        function validate() {
+            name = document.getElementById("name").value
+            pass = document.getElementById("pass").value
+            cpass = document.getElementById("cpass").value
+            mobile = document.getElementById("mobile").value
+            alert("sumbit")
+            if (name.lenght < 1) {
+                alert("Name is Required!!!")
+                return false
+            }
+            if (pass.lenght < 1) {
+                alert("Password is Required!!!")
+                return false
+            }
+            if (cpass.length < 1) {
+                alert("Cpassword is Required!!!")
+                return false
+            }
+            if (mobile.lenght < 1) {
+                alert("Mobile no is Required!!!")
+                return false
+            }
+            if (pass != cpass) {
+                alert("Both password not same!!")
+                return false
+            }
+            if (mobile.lenght != 10) {
+
+                alert("Enter only 10 digits")
+                return false
+
+
+            }
+            if (isNaN(mobile)) {
+                alert("Enter only Digits!!!")
+                return false
+            }
+            return true
+        }
+        function checkName() {
+            name= document.getElementById("name").value
+            if (name.length < 1) {
+                document.getElementById("sp1").innerHTML = "*"
+                document.getElementById("sp1").style.color = "red"
+
+            }
+            else {
+                document.getElementById("sp1").innerHTML = ""
+            }
+        }
+
+        function checkPass() {
+            pass=document.getElementById("pass").value
+            if (name.length < 1) {
+                document.getElementById("sp2").innerHTML = "*"
+                document.getElementById("sp2").style.color = "red"
+
+            }
+            else {
+                document.getElementById("sp2").innerHTML =" "
+            }
+        }
+        function checkCpass() {
+            cpass=document.getElementById("cpass").value
+            if (name.length < 1) {
+                document.getElementById("sp3").innerHTML = "*"
+                document.getElementById("sp3").style.color = "red"
+
+            }
+            else {
+                document.getElementById("sp3").innerHTML =" "
+            }
+
+        }
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <form action="Welcome.html">
+        <table align="center" border="1">
+            <tr>
+                <td>Entername:</td>
+                <td>
+                    <input type="text" name="name" id="name" onblur="checkName()"><span id="sp1"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Enterpass:</td>
+                <td>
+                    <input type="password" name="pass" id="pass" onblur="checkPass()"><span id="sp2"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>EnterCpass</td>
+                <td>
+                    <input type="password" name="cpass" id="cpass" onblur="checkCpass()"><span id="sp3"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>EnterMobile</td>
+                <td>
+                    <input type="text" name="mobile" id="mobile">
+                </td>
+            </tr>
+            <tr>
+                <td align="center" colspan="2">
+                    <input type="submit" name="btn" value="Click" onclick="return validate()">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>
